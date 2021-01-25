@@ -1,0 +1,207 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+/* Tables
+   ========================================================================== */
+/**
+ * Remove spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* START WRITING YOUR OWN CSS RULES BELOW THIS LINE
+   ========================================================================== */
+/*CSS reset */
+   body{
+    font-family: Arial; 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/*sections------------------------------------------------------------------- */
+/*Ensure fit to any screen size*/
+main{
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+}
+
+.banner{
+    position: relative;
+}
+
+.banner .intro{
+    position: absolute;
+    left: 10px;
+    top: 20%;
+    color: aliceblue;
+    padding: 30px;
+}
+.banner h2{
+    font-size: 55px;
+}
+.banner h2 span{
+    font-size: .8em;
+}
+.page-footer{
+    position: bottom;
+    padding-top: 0px;
+}
+
+/* Date & Time pickers colour control ------------------------------------------------*/
+.datepicker-date-display{
+    background-color: #67bce0;
+} 
+.datepicker-cancel{
+    color: #67bce0;
+}
+.datepicker-done{
+    color: #67bce0;
+} 
+.datepicker-table td.is-selected{
+    background-color: #67bce0;
+} 
+.datepicker-table td.is-today{
+    color: #67bce0;
+}
+
+.timepicker-digital-display{
+    background-color: #67bce0;
+} 
+.timepicker-close{
+    color: #67bce0;
+}
+.timepicker-done{
+    color: #67bce0;
+} 
+.timepicker-canvas line{
+    stroke: #67bce0;
+} 
+.timepicker-canvas-bg{
+    fill: #67bce0;
+}
+.timepicker-canvas-bearing{
+    fill: #67bce0;
+}
+.label.active{
+     color:#67bce0; 
+}
+
+/*Images------------------------------------------------------------------*/
+.banner img{
+    max-width: 100%;
+    width: 100%;
+    max-height: 20%;
+    height: 375px;
+    margin: 0;
+}
+
+/*divs------------------------------------------------------------------- */
+
+
+
+
+/*headings------------------------------------------------------------------- */
+header{
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+h1	{
+    color: white;
+    border: 8px solid white;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 15px;
+}
+.headerContainer h1{
+    text-align: center;
+}
+
+/*grouping------------------------------------------------------------------- */
+p	{
+	font-size: 20px;
+	font-size:1.25rem;
+	line-height: 1.5;
+	margin: 10px 0 10px 0;
+}
+article p {
+    line-height: 2em;
+    color: #333;
+}
+
+/*lists---------------------------------------------------------------------- */
+
+
+/*text------------------------------------------------------------------------ */
+input{
+    display: inline-block;
+    border-radius: 5px;
+    width: 75%;
+}
+input.button
+{
+    display: inline-block;
+    border-radius: 5px;
+    width: 25%;
+}
+/*anchors--------------------------------------------------------------------- */
+a:link	{
+	text-decoration: none;
+	
+}
+a:visited {
+	text-decoration: none;
+	
+}
+a:hover {
+	text-decoration: none;
+	
+}
+a:active {
+	text-decoration: none;
+	
+}
+/*Buttons------------------------------------------------------------------------*/
+.btn-small{
+    background-color: #67bce0;
+    position: absolute;
+    right: 175px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}

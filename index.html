@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head Access-Control-Allow-Origin: *>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Sector</title>
+</head>
+
+<body class ="blue lighten-5">
+  
+    <!-- NAVIGATION -->
+    <nav class="z-depth-0 blue grey darken-1" style="height: 80px;">
+        <div class = "nav-wrapper container" >
+            <img src="img/SectorLogoWhiteCropped.png" style="height: 70px;width: 200px;">
+            <ul id="nav-mobile" class ="right hide-on-med-and-down" style="height: 80px; margin-top: 5px;">
+                <!--LOGIN & SIGN UP MODALS ////// USER LOGGED OUT-->
+                <li class="logged-out" style = "display: none;">
+                    <a href="#" class="white-text modal-trigger" data-target="modal-sign-up">Sign up</a></li>
+                <li class="logged-out" style = "display: none;">
+                    <a href="#" class="white-text modal-trigger" data-target="modal-login">Login</a></li>
+                <!-- CONTENT MODALS /////// USER LOGGED IN -->
+                <li class="logged-in" style = "display: none;">
+                    <a href="#" class="white-text modal-trigger" data-target="modal-create-event">Create Event</a></li>
+                <li class-="manager" style = "display: none;">
+                    <a href="/usermang.html" class="white modal-trigger" data-target="modal-users">Users</a></li>
+                <li class="logged-in" style = "display: none;">
+                    <a href="#" class="white-text modal-trigger" data-target="modal-account">My Account</a></li>
+                <li class="logged-in" style = "display: none;" >
+                    <a href="#" class="user-event-list white-text modal-trigger" data-target="modal-user-events">My Events</a></li>
+                <li class="logged-in" style = "display: none;">
+                    <a href="#" class="white-text" id="logout">Logout</a></li>
+            </ul>
+        </div>    
+    </nav>
+   
+    <!--Modal Sign up-->
+    <div class ="modal" id="modal-sign-up">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <form id="sign-up-form">
+                <div class="input-field">
+                    <input type ="email" id="sign-up-email" required/>
+                    <label for="sign-up-email">Email Address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="sign-up-password" required>
+                    <label for="sign-up-password">Password</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="sign-up-fName" required>
+                    <label for="sign-up-fName">First Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="sign-up-sName" required>
+                    <label for="sign-up-sName">Surname</label>
+                </div>
+                <button class="btn blue darken-2 z-depth-0">Sign up</button>                
+            </form>
+        </div>
+    </div>
+
+    <!--Modal login-->
+    <div class ="modal" id="modal-login">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type ="email" id="login-email" required/>
+                    <label for="login-email">Email Address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">Password</label>
+                </div>
+                <button class="btn blue darken-2 z-depth-0">Login</button>                
+            </form>
+        </div>
+    </div>
+
+    <!--Modal Account-->
+    <div class= "modal" id="modal-account">
+        <div class="modal-content center-align">
+            <h2>My Account</h2><br />
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+    <!--Modal create Event-->
+    <div class= "modal" id="modal-create-event">
+        <div class= "modal-content">
+            <h2>Create Event</h2>
+            <form id="create-event-form">
+                <div class = "input-field">
+                    <input type = "text" id= "eName" required>
+                    <label for="eName">Event Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <select id = 'eType'>
+                      <option value="" disabled selected>Job Type</option>
+                      <option value="Door">Door</option>
+                      <option value="Bodyguard">Bodyguard</option>
+                      <option value="Private Party">Private Party</option>
+                      <option value="Driver">Driver</option>
+                    </select>
+                    <label for ="eType">Job Type</label>
+                </div>
+                <!-- Start date & Time-->
+                <div class = "input-field">
+                    <input type = "text" class = "datepicker" id= "sDate" required>
+                    <label for="sDate">Start Date</label>
+                </div>
+                <div class = "input-field">
+                    <input type = "text" class = "timepicker" id= "sTime" required>
+                    <label for="sTime">Start Time</label>
+                </div>
+                <!-- End Date & Time-->
+                <div class = "input-field">
+                    <input type = "text" class = "datepicker" id= "eDate" required>
+                    <label for="eDate">End Date</label>
+                </div>
+                <div class = "input-field">
+                    <input type = "text" class = "timepicker" id= "eTime" required>
+                    <label for="eTime">End Time</label>
+                </div>
+                <!--Number of staff-->
+                <div class = "input-field">
+                    <input type = "number" class = "input-field" id= "noOfStaff" required>
+                    <label for="noOfStaff">Number of staff</label>
+                </div>
+                <button class="btn blue darken-2 z-depth-0">Create</button> 
+            </form>
+        </div>
+    </div>
+
+    <!-- EVENT LIST -->
+    <div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+        <ul class="collapsible z-depth-0 events" style="border: none;">
+
+        </ul>
+    </div>
+
+    <!--Modal User Event List-->
+    <div class= "modal" id="modal-user-events">
+        <div class="modal-content center-align">
+            <h2>My Events</h2><br />
+            <ul class="collapsible z-depth-0 events user-events" style="border: none;">
+
+            </ul>
+        </div>
+    </div>
+
+  
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-functions.js"></script>
+
+    <!-- REFERENCE & INITIALISATION OF SECTOR FIRESTORE DATABASE -->
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAQDjEk9VsBIgvGyMarjM0fBq8qU-QTmqM",
+        authDomain: "sectorfirebase-9648f.firebaseapp.com",
+        databaseURL: "https://sectorfirebase-9648f.firebaseio.com",
+        projectId: "sectorfirebase-9648f",
+        storageBucket: "sectorfirebase-9648f.appspot.com",
+        messagingSenderId: "646710449213",
+        appId: "1:646710449213:web:7b7148288533d307920654"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    //Auth and Firestore references 
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+
+</body>
+</html>
+
